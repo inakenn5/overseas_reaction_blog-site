@@ -3,7 +3,7 @@ languageCode = "ja"
 title = "海外の反応で見る日本人サッカー選手"
 
 [params]
-  description = "欧州・オーストラリア・北米で活躍する日本人サッカー選手について、Redditの海外ファンの反応を翻訳して紹介するブログ"
+  description = "欧州で活躍する日本人サッカー選手に、海外のファンはどんな反応をしているんだろう？そんな声を日本語に訳してお届けします。"
 
 [markup.goldmark.renderer]
   unsafe = true
