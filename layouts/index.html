@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1>{{ site.Title }}</h1>
+{{ if site.Params.description }}<p class="lead">{{ site.Params.description }}</p>{{ end }}
+<ul class="post-list">
+  {{ range where site.RegularPages "Type" "posts" }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+    {{ if .Description }}<p class="post-excerpt">{{ .Description }}</p>{{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

@@ -1,0 +1,17 @@
+baseURL = "https://<GITHUB_OWNER>.github.io/<GITHUB_REPO>/"
+languageCode = "ja"
+title = "海外の反応で見る日本人サッカー選手"
+
+[params]
+  description = "欧州・オーストラリア・北米で活躍する日本人サッカー選手について、Redditの海外ファンの反応を翻訳して紹介するブログ"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
