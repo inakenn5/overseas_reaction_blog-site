@@ -1,12 +1,13 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<ul class="post-list">
+<h1 class="archive-title">{{ .Title }}</h1>
+<section class="post-feed">
   {{ range .Pages.ByDate.Reverse }}
-  <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
-    {{ if .Description }}<p class="post-excerpt">{{ .Description }}</p>{{ end }}
-  </li>
+  <article class="post-card">
+    {{ with .Params.categories }}<p class="post-card-category">{{ delimit . ", " }}</p>{{ end }}
+    <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ if .Description }}<p class="post-card-excerpt">{{ .Description }}</p>{{ end }}
+    <p class="post-card-meta">{{ .Date.Format "2006.01.02" }}</p>
+  </article>
   {{ end }}
-</ul>
+</section>
 {{ end }}

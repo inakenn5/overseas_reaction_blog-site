@@ -1,13 +1,12 @@
 {{ define "main" }}
-<h1>{{ site.Title }}</h1>
-{{ if site.Params.description }}<p class="lead">{{ site.Params.description }}</p>{{ end }}
-<ul class="post-list">
+<section class="post-feed">
   {{ range where site.RegularPages "Type" "posts" }}
-  <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
-    {{ if .Description }}<p class="post-excerpt">{{ .Description }}</p>{{ end }}
-  </li>
+  <article class="post-card">
+    {{ with .Params.categories }}<p class="post-card-category">{{ delimit . ", " }}</p>{{ end }}
+    <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ if .Description }}<p class="post-card-excerpt">{{ .Description }}</p>{{ end }}
+    <p class="post-card-meta">{{ .Date.Format "2006.01.02" }}</p>
+  </article>
   {{ end }}
-</ul>
+</section>
 {{ end }}
